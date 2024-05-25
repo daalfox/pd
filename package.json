@@ -1,0 +1,15 @@
+{
+  "name": "pd",
+  "version": "0.0.0",
+  "description": "css in js with a functional twist",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "daalfox",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.0",
+    "typescript": "^5.4.5"
+  }
+}
