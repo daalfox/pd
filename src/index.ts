@@ -6,7 +6,7 @@ export class Pd {
   }
 
   flex(direction?: "row" | "col") {
-    this.styles = { display: "flex", direction };
+    this.styles = { ...this.styles, display: "flex", direction };
     return this;
   }
 
