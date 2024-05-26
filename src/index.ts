@@ -1,23 +1,37 @@
-export class Pd {
-  private styles: Style;
+import { Properties as Css } from "csstype";
 
-  private constructor(styles?: Style) {
+export class Pd {
+  private styles: Css;
+
+  private constructor(styles?: Css) {
     this.styles = styles || {};
   }
 
   flex(direction?: "row" | "col") {
-    this.styles = { ...this.styles, display: "flex", direction };
+    this.styles = {
+      ...this.styles,
+      display: "flex",
+      flexDirection: direction === "row" ? "row" : "column",
+    };
+    return this;
+  }
+  flexReverse(direction?: "row" | "col") {
+    this.styles = {
+      ...this.styles,
+      display: "flex",
+      flexDirection: direction === "row" ? "row-reverse" : "column-reverse",
+    };
     return this;
   }
 
   static new() {
     return new Pd();
   }
-  static from(styles: Style) {
+  static from(styles: Css) {
     return new Pd(styles);
   }
 
-  raw(): Style {
+  raw(): Css {
     return this.styles;
   }
   into(): string {
@@ -25,9 +39,4 @@ export class Pd {
     // this is what converts styles to a class string
     return "";
   }
-}
-
-interface Style {
-  display?: "flex" | "block";
-  direction?: "row" | "col";
 }
