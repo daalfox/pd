@@ -15,7 +15,7 @@ export class Pd {
     };
     return this;
   }
-  flexReverse(direction?: "row" | "col") {
+  flexRev(direction?: "row" | "col") {
     this.styles = {
       ...this.styles,
       display: "flex",
