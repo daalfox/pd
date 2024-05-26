@@ -24,6 +24,30 @@ export class Pd {
     return this;
   }
 
+  p(value: number, unit: "px" | "em" | "rem") {
+    this.styles = {
+      ...this.styles,
+      padding: `${value}${unit}`,
+    };
+    return this;
+  }
+  px(value: number, unit: "px" | "em" | "rem") {
+    this.styles = {
+      ...this.styles,
+      paddingLeft: `${value}${unit}`,
+      paddingRight: `${value}${unit}`,
+    };
+    return this;
+  }
+  py(value: number, unit: "px" | "em" | "rem") {
+    this.styles = {
+      ...this.styles,
+      paddingTop: `${value}${unit}`,
+      paddingBottom: `${value}${unit}`,
+    };
+    return this;
+  }
+
   static new() {
     return new Pd();
   }
